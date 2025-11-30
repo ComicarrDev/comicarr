@@ -1,0 +1,21 @@
+.selection-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.selection-controls__count {
+  font-size: 0.875rem;
+  color: var(--text-muted-color, #666);
+  margin-left: auto;
+}
+
+.selection-controls .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+
+

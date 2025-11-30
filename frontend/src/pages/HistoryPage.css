@@ -1,0 +1,97 @@
+.history-page {
+  padding: 2rem;
+}
+
+.history-page__filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.history-page__filters > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.history-page__filters label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.history-page__filters select {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.875rem;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-list__row {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background: var(--card-bg-color);
+}
+
+.history-list__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.history-list__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted-color);
+}
+
+.history-list__error {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: var(--error-bg-color);
+  color: var(--error-color);
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.download-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.download-status--completed {
+  background: var(--success-bg-color);
+  color: var(--success-color);
+}
+
+.download-status--failed {
+  background: var(--error-bg-color);
+  color: var(--error-color);
+}
+
+.download-status--queued {
+  background: var(--info-bg-color);
+  color: var(--info-color);
+}
+
+.download-status--active {
+  background: var(--primary-bg-color);
+  color: var(--primary-color);
+}
+
+
+

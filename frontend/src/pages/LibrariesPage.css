@@ -1,0 +1,185 @@
+.libraries-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.libraries-page__loading,
+.libraries-page__error {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.libraries-page__error button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: var(--color-button-text-dark);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 0 8px var(--glow-primary-button);
+}
+
+.libraries-page__error button:hover {
+  background: var(--color-primary-hover);
+  box-shadow: 0 0 12px var(--glow-primary-button);
+}
+
+.libraries-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.libraries-page__header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.libraries-page__empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-muted);
+}
+
+.libraries-table-wrapper {
+  overflow-x: auto;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.libraries-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.libraries-table thead {
+  background-color: var(--color-bg-secondary);
+}
+
+.libraries-table th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.libraries-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.libraries-table td code {
+  font-family: monospace;
+  font-size: 0.9em;
+  background-color: var(--color-bg-main);
+  color: var(--color-text);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+}
+
+.number-column {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.action-column {
+  white-space: nowrap;
+}
+
+.action-column button {
+  margin-right: 0.5rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-badge--enabled {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  box-shadow: 0 0 8px rgba(75, 211, 123, 0.3);
+}
+
+.status-badge--disabled {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  box-shadow: 0 0 8px rgba(255, 79, 97, 0.3);
+}
+
+.default-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--color-info-bg);
+  color: var(--color-info);
+  box-shadow: 0 0 8px var(--glow-info);
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.button.primary {
+  background: var(--color-primary);
+  color: var(--color-button-text-dark);
+  box-shadow: 0 0 12px var(--glow-primary-button);
+}
+
+.button.primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  box-shadow: 0 0 16px var(--glow-primary-button);
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.button.secondary:hover:not(:disabled) {
+  background: var(--color-border);
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.button:disabled {
+  color: var(--color-text-disabled);
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.button.primary:disabled {
+  background-color: var(--color-primary-disabled);
+  color: var(--color-text-muted);
+}
+
+.button.secondary:disabled {
+  background-color: var(--input-disabled-bg);
+  border-color: var(--input-disabled-border);
+  color: var(--color-text-disabled);
+}
+

@@ -1,0 +1,146 @@
+/* Indexer card specific styles - extends base .card styles from Card.css */
+
+.indexer-card {
+  cursor: pointer;
+}
+
+.indexer-card:hover {
+  border-color: var(--color-primary);
+}
+
+.indexer-card-header {
+  margin-bottom: 0;
+}
+
+.indexer-card-header h3 {
+  color: var(--color-text);
+}
+
+.indexer-card-type {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: var(--color-bg-main);
+  color: var(--color-text-secondary);
+  width: fit-content;
+  text-transform: capitalize;
+  border: 1px solid var(--color-border);
+}
+
+.indexer-card-type--builtin_http {
+  background: var(--color-info-bg);
+  color: var(--color-info);
+  border-color: var(--color-info);
+}
+
+.indexer-card-type--newznab {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.indexer-card-type--torrent {
+  background: rgba(138, 99, 255, 0.15);
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.indexer-card-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.indexer-card-capability {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  background: var(--color-bg-main);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.indexer-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.indexer-card-tag {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  background: var(--badge-primary-bg);
+  color: var(--badge-primary-text);
+}
+
+
+.icon-testing {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Button styles for indexer card actions */
+.indexer-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.indexer-card-actions .button {
+  padding: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.indexer-card-actions .button:hover:not(:disabled) {
+  background: var(--color-border);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.indexer-card-actions .button:disabled {
+  color: var(--color-text-disabled);
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.indexer-card-actions .button.primary:disabled {
+  background-color: var(--color-primary-disabled);
+  color: var(--color-text-muted);
+}
+
+.indexer-card-actions .button.secondary:disabled {
+  background-color: var(--input-disabled-bg);
+  border-color: var(--input-disabled-border);
+  color: var(--color-text-disabled);
+}
+
+.indexer-card-actions .button--danger {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.indexer-card-actions .button--danger:hover:not(:disabled) {
+  background: var(--color-error-bg);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+

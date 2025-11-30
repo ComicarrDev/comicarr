@@ -1,0 +1,101 @@
+.setup-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px); /* Account for nav height */
+  padding: 2rem;
+  background: var(--background-color, #f5f5f5);
+}
+
+.setup-container {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.setup-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.setup-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.setup-header p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.setup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.setup-error {
+  padding: 0.75rem;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 4px;
+  color: #c33;
+  font-size: 0.9rem;
+}
+
+.setup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.setup-field label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.setup-field input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.setup-field input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.setup-field input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.setup-button {
+  padding: 0.75rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.setup-button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.setup-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+

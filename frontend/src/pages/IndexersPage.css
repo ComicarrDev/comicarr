@@ -1,0 +1,38 @@
+.indexers-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.indexer-add-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: var(--color-button-text-dark);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 12px var(--glow-primary-button);
+}
+
+.indexer-add-button:hover {
+  background: var(--color-primary-hover);
+  box-shadow: 0 0 16px var(--glow-primary-button);
+}
+
+.indexers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.error-message {
+  color: var(--color-error);
+  margin: 1rem 0;
+}
+

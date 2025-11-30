@@ -1,0 +1,114 @@
+/* Shared card base styles */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+/* Card variants */
+.card--clickable {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card--clickable:hover {
+  border-color: var(--color-primary);
+  background: var(--card-hover-bg);
+  box-shadow: 0 0 12px var(--glow-primary);
+  transform: translateY(-2px);
+}
+
+.card--disabled {
+  opacity: 0.6;
+  background: var(--card-bg);
+  border-color: var(--color-border);
+}
+
+.card--enabled {
+  border-left: 4px solid var(--color-success);
+}
+
+/* Card sections */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h2,
+.card-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Card actions */
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Card content (for settings index cards) */
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-content h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.card-content p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Card icon (for settings index cards) */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--color-bg-main);
+  border-radius: 8px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+

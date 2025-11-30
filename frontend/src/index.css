@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables are set dynamically by ThemeContext */
+/* Default values are set here as fallback, but ThemeContext will override them */
+
+:root {
+  /* These will be overridden by ThemeContext */
+  --color-primary: #FF7A18;
+  --color-primary-hover: #FF9E40;
+  --color-primary-disabled: #FFC89B;
+  --color-secondary: #8A63FF;
+  --color-secondary-hover: #B39CFF;
+  --glow-primary: rgba(255, 122, 24, 0.30);
+  --glow-secondary: rgba(138, 99, 255, 0.30);
+  --glow-info: rgba(88, 191, 255, 0.25);
+  --glow-primary-button: rgba(255, 122, 24, 0.35);
+  
+  --color-bg-main: #111214;
+  --color-bg-secondary: #181A1D;
+  --color-bg-card: #181A1D;
+  --color-bg-elevated: #1C1E21;
+  --color-bg-row-hover: #1A1C1F;
+  --color-bg-sidebar: #181A1D;
+  
+  --color-border: #222427;
+  --color-border-divider: #2C2E31;
+  --color-border-active: #FF7A18;
+  
+  --color-text: #E6E6E6;
+  --color-text-secondary: #B8B8B8;
+  --color-text-muted: #8A8A8A;
+  --color-text-disabled: #6B6B6B;
+  
+  --color-success: #4BD37B;
+  --color-success-hover: #6BE598;
+  --color-success-bg: #133A23;
+  --color-warning: #FFB545;
+  --color-warning-hover: #FFD089;
+  --color-warning-bg: #3A2E12;
+  --color-error: #FF4F61;
+  --color-error-hover: #FF7A86;
+  --color-error-bg: #3A1319;
+  --color-info: #58BFFF;
+  --color-info-hover: #89D2FF;
+  --color-info-bg: #11293A;
+  
+  --button-primary-bg: #FF7A18;
+  --button-primary-hover-bg: #FF9E40;
+  --button-primary-text: #111214;
+  --button-primary-shadow: 0 2px 6px rgba(255,122,24,0.35);
+  --button-secondary-bg: #222427;
+  --button-secondary-hover-bg: #181A1D;
+  --button-secondary-text: #E6E6E6;
+  --button-secondary-border: 1px solid #FF7A18;
+  --button-tertiary-bg: transparent;
+  --button-tertiary-hover-bg: rgba(255,122,24,0.08);
+  --button-tertiary-text: #FF7A18;
+  
+  --card-bg: #181A1D;
+  --card-border: #222427;
+  --card-shadow: 0 2px 6px rgba(0,0,0,0.30);
+  --card-hover-bg: #1C1E21;
+  --card-highlight-border: #FF7A18;
+  --card-highlight-glow: rgba(255,122,24,0.12);
+  
+  --input-bg: #1A1C1F;
+  --input-border: #2C2E31;
+  --input-text: #E6E6E6;
+  --input-placeholder: #7E7E7E;
+  --input-focus-border: #FF7A18;
+  --input-focus-shadow: 0 0 0 2px rgba(255,122,24,0.25);
+  --input-disabled-bg: #16181A;
+  --input-disabled-border: #232528;
+  --input-disabled-text: #6B6B6B;
+  
+  --badge-default-bg: #222427;
+  --badge-default-text: #E6E6E6;
+  --badge-primary-bg: #FF7A18;
+  --badge-primary-text: #111214;
+  --badge-secondary-bg: #8A63FF;
+  --badge-secondary-text: #111214;
+  
+  --shadow-soft: 0 1px 2px rgba(0,0,0,0.40);
+  --shadow-medium: 0 2px 6px rgba(0,0,0,0.50);
+  --shadow-dialog: 0 4px 14px rgba(0,0,0,0.65);
+  
+  --color-button-text-dark: #111214;
+  --color-button-text-light: #FFFFFF;
+  
+  /* Standard heights for consistent sizing */
+  --input-height: 2.5rem;
+  --button-height: 2.5rem;
+  --button-padding-y: 0.5rem;
+  --button-padding-x: 1rem;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-main);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+}
+
+/* Toast notifications (Sonner) - Theme-aware styles */
+[data-sonner-toaster],
+.sonner-toaster {
+  /* Toast container/viewport */
+}
+
+[data-sonner-toast],
+.sonner-toast {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  color: var(--color-text) !important;
+  box-shadow: var(--shadow-dialog) !important;
+  border-radius: 8px !important;
+}
+
+[data-sonner-toast] [data-title] {
+  color: var(--color-text) !important;
+}
+
+[data-sonner-toast] [data-description] {
+  color: var(--color-text-secondary) !important;
+}
+
+[data-sonner-toast] [data-icon] {
+  color: var(--color-text) !important;
+}
+
+/* Success toast */
+[data-sonner-toast][data-type="success"] {
+  background: var(--color-success-bg) !important;
+  border-color: var(--color-success) !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-title],
+[data-sonner-toast][data-type="success"] [data-description] {
+  color: var(--color-success) !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-icon] {
+  color: var(--color-success) !important;
+}
+
+/* Error toast */
+[data-sonner-toast][data-type="error"] {
+  background: var(--color-error-bg) !important;
+  border-color: var(--color-error) !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-title],
+[data-sonner-toast][data-type="error"] [data-description] {
+  color: var(--color-error) !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-icon] {
+  color: var(--color-error) !important;
+}
+
+/* Warning toast */
+[data-sonner-toast][data-type="warning"] {
+  background: var(--color-warning-bg) !important;
+  border-color: var(--color-warning) !important;
+}
+
+[data-sonner-toast][data-type="warning"] [data-title],
+[data-sonner-toast][data-type="warning"] [data-description] {
+  color: var(--color-warning) !important;
+}
+
+[data-sonner-toast][data-type="warning"] [data-icon] {
+  color: var(--color-warning) !important;
+}
+
+/* Info toast */
+[data-sonner-toast][data-type="info"] {
+  background: var(--color-info-bg) !important;
+  border-color: var(--color-info) !important;
+}
+
+[data-sonner-toast][data-type="info"] [data-title],
+[data-sonner-toast][data-type="info"] [data-description] {
+  color: var(--color-info) !important;
+}
+
+[data-sonner-toast][data-type="info"] [data-icon] {
+  color: var(--color-info) !important;
+}
+
+/* Default toast (no type specified) */
+[data-sonner-toast]:not([data-type]) {
+  background: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+[data-sonner-toast]:not([data-type]) [data-title] {
+  color: var(--color-text) !important;
+}
+
+[data-sonner-toast]:not([data-type]) [data-description] {
+  color: var(--color-text-secondary) !important;
+}
+
+[data-sonner-toast]:not([data-type]) [data-icon] {
+  color: var(--color-text) !important;
+}
+
+/* Toast close button */
+[data-sonner-toast] [data-close-button] {
+  color: var(--color-text-muted) !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+[data-sonner-toast] [data-close-button]:hover {
+  color: var(--color-text) !important;
+  background: var(--color-bg-row-hover) !important;
+}
+
+/* Toast action button */
+[data-sonner-toast] [data-button] {
+  background: var(--button-primary-bg) !important;
+  color: var(--button-primary-text) !important;
+  border: none !important;
+  box-shadow: var(--button-primary-shadow) !important;
+}
+
+[data-sonner-toast] [data-button]:hover {
+  background: var(--button-primary-hover-bg) !important;
+}
+
+/* Global button and input height consistency */
+/* Ensure buttons and inputs that appear together have matching heights */
+button.primary,
+button.secondary,
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select {
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-size: 0.9375rem;
+  font-family: inherit;
+}
+
+/* Standard button styles - ensure consistent height */
+button.primary,
+button.secondary {
+  min-height: var(--button-height);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Standard input styles - match button height */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+  min-height: var(--input-height);
+  padding: var(--button-padding-y) 0.75rem;
+}
+
+/* When inputs and buttons appear together, ensure consistent heights */
+/* Target common control container patterns */
+.root-folder-add__controls,
+.folder-browser__controls,
+.search-controls,
+.form-controls,
+[class*="__controls"] {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Ensure inputs and buttons in control containers have matching heights */
+.root-folder-add__controls > input,
+.root-folder-add__controls > button,
+.folder-browser__controls > input,
+.folder-browser__controls > button,
+.search-controls > input,
+.search-controls > button,
+.form-controls > input,
+.form-controls > button,
+[class*="__controls"] > input,
+[class*="__controls"] > button {
+  height: var(--button-height);
+}
+

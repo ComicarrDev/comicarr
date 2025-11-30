@@ -1,0 +1,411 @@
+export type ThemeMode = 'dark' | 'light';
+
+export interface ThemeConfig {
+  brand: {
+    primary: string;
+    primaryHover: string;
+    primarySoft: string;
+    secondary: string;
+    secondaryHover: string;
+    glowPrimary: string;
+    glowSecondary: string;
+    glowInfo: string;
+  };
+  neutrals: {
+    background: {
+      main: string;
+      panel: string;
+      elevated: string;
+      rowHover: string;
+      sidebar: string;
+    };
+    borders: {
+      main: string;
+      divider: string;
+      active: string;
+    };
+    text: {
+      primary: string;
+      secondary: string;
+      muted: string;
+      disabled: string;
+    };
+  };
+  semantic: {
+    success: {
+      base: string;
+      hover: string;
+      softBg: string;
+    };
+    warning: {
+      base: string;
+      hover: string;
+      softBg: string;
+    };
+    error: {
+      base: string;
+      hover: string;
+      softBg: string;
+    };
+    info: {
+      base: string;
+      hover: string;
+      softBg: string;
+    };
+  };
+  buttons: {
+    primary: {
+      bg: string;
+      hoverBg: string;
+      text: string;
+      border: string;
+      shadow: string;
+      focusRing: string;
+    };
+    secondary: {
+      bg: string;
+      hoverBg: string;
+      text: string;
+      border: string;
+      shadow: string;
+      focusRing: string;
+    };
+    tertiary: {
+      bg: string;
+      hoverBg: string;
+      text: string;
+      border: string;
+      shadow: string;
+      focusRing: string;
+    };
+  };
+  cards: {
+    standard: {
+      bg: string;
+      border: string;
+      shadow: string;
+    };
+    hoverable: {
+      bg: string;
+      hoverBg: string;
+      border: string;
+      shadow: string;
+    };
+    highlighted: {
+      bg: string;
+      border: string;
+      glow: string;
+      shadow: string;
+    };
+  };
+  inputs: {
+    default: {
+      bg: string;
+      border: string;
+      text: string;
+      placeholder: string;
+    };
+    focus: {
+      border: string;
+      shadow: string;
+    };
+    disabled: {
+      bg: string;
+      border: string;
+      text: string;
+      placeholder: string;
+    };
+  };
+  badges: {
+    default: {
+      bg: string;
+      text: string;
+    };
+    primary: {
+      bg: string;
+      text: string;
+    };
+    secondary: {
+      bg: string;
+      text: string;
+    };
+  };
+  shadows: {
+    soft: string;
+    medium: string;
+    dialog: string;
+  };
+}
+
+const brand = {
+  primary: '#FF7A18',
+  primaryHover: '#FF9E40',
+  primarySoft: '#FFC89B',
+  secondary: '#8A63FF',
+  secondaryHover: '#B39CFF',
+  glowPrimary: 'rgba(255,122,24,0.30)',
+  glowSecondary: 'rgba(138,99,255,0.30)',
+  glowInfo: 'rgba(88,191,255,0.25)',
+};
+
+export const darkTheme: ThemeConfig = {
+  brand,
+  neutrals: {
+    background: {
+      main: '#111214',
+      panel: '#181A1D',
+      elevated: '#1C1E21',
+      rowHover: '#1A1C1F',
+      sidebar: '#181A1D',
+    },
+    borders: {
+      main: '#222427',
+      divider: '#2C2E31',
+      active: '#FF7A18',
+    },
+    text: {
+      primary: '#E6E6E6',
+      secondary: '#B8B8B8',
+      muted: '#8A8A8A',
+      disabled: '#6B6B6B',
+    },
+  },
+  semantic: {
+    success: {
+      base: '#4BD37B',
+      hover: '#6BE598',
+      softBg: '#133A23',
+    },
+    warning: {
+      base: '#FFB545',
+      hover: '#FFD089',
+      softBg: '#3A2E12',
+    },
+    error: {
+      base: '#FF4F61',
+      hover: '#FF7A86',
+      softBg: '#3A1319',
+    },
+    info: {
+      base: '#58BFFF',
+      hover: '#89D2FF',
+      softBg: '#11293A',
+    },
+  },
+  buttons: {
+    primary: {
+      bg: '#FF7A18',
+      hoverBg: '#FF9E40',
+      text: '#111214',
+      border: 'none',
+      shadow: '0 2px 6px rgba(255,122,24,0.35)',
+      focusRing: '0 0 0 3px rgba(255,122,24,0.25)',
+    },
+    secondary: {
+      bg: '#222427',
+      hoverBg: '#181A1D',
+      text: '#E6E6E6',
+      border: '1px solid #FF7A18',
+      shadow: 'none',
+      focusRing: '0 0 0 3px rgba(255,122,24,0.25)',
+    },
+    tertiary: {
+      bg: 'transparent',
+      hoverBg: 'rgba(255,122,24,0.08)',
+      text: '#FF7A18',
+      border: 'none',
+      shadow: 'none',
+      focusRing: '0 0 0 3px rgba(255,122,24,0.25)',
+    },
+  },
+  cards: {
+    standard: {
+      bg: '#181A1D',
+      border: '#222427',
+      shadow: '0 2px 6px rgba(0,0,0,0.30)',
+    },
+    hoverable: {
+      bg: '#181A1D',
+      hoverBg: '#1C1E21',
+      border: '#2A2C2F',
+      shadow: '0 2px 6px rgba(0,0,0,0.30)',
+    },
+    highlighted: {
+      bg: '#181A1D',
+      border: '#FF7A18',
+      glow: 'rgba(255,122,24,0.12)',
+      shadow: '0 0 0 1px #FF7A18',
+    },
+  },
+  inputs: {
+    default: {
+      bg: '#1A1C1F',
+      border: '#2C2E31',
+      text: '#E6E6E6',
+      placeholder: '#7E7E7E',
+    },
+    focus: {
+      border: '#FF7A18',
+      shadow: '0 0 0 2px rgba(255,122,24,0.25)',
+    },
+    disabled: {
+      bg: '#16181A',
+      border: '#232528',
+      text: '#6B6B6B',
+      placeholder: '#6B6B6B',
+    },
+  },
+  badges: {
+    default: {
+      bg: '#222427',
+      text: '#E6E6E6',
+    },
+    primary: {
+      bg: '#FF7A18',
+      text: '#111214',
+    },
+    secondary: {
+      bg: '#8A63FF',
+      text: '#111214',
+    },
+  },
+  shadows: {
+    soft: '0 1px 2px rgba(0,0,0,0.40)',
+    medium: '0 2px 6px rgba(0,0,0,0.50)',
+    dialog: '0 4px 14px rgba(0,0,0,0.65)',
+  },
+};
+
+export const lightTheme: ThemeConfig = {
+  brand,
+  neutrals: {
+    background: {
+      main: '#F8F9FA',
+      panel: '#FFFFFF',
+      elevated: '#FFFFFF',
+      rowHover: '#F0F2F5',
+      sidebar: '#FFFFFF',
+    },
+    borders: {
+      main: '#D8D8D8',
+      divider: '#E5E5E5',
+      active: '#FF7A18',
+    },
+    text: {
+      primary: '#1D1D1D',
+      secondary: '#4A4A4A',
+      muted: '#7A7A7A',
+      disabled: '#BEBEBE',
+    },
+  },
+  semantic: {
+    success: {
+      base: '#3DBE6C',
+      hover: '#56D786',
+      softBg: '#E6F7EC',
+    },
+    warning: {
+      base: '#F5A623',
+      hover: '#FFC55A',
+      softBg: '#FFF4E0',
+    },
+    error: {
+      base: '#E0414D',
+      hover: '#FF6B77',
+      softBg: '#FCECEF',
+    },
+    info: {
+      base: '#3EA8FF',
+      hover: '#6BC3FF',
+      softBg: '#E7F4FF',
+    },
+  },
+  buttons: {
+    primary: {
+      bg: '#FF7A18',
+      hoverBg: '#FF9E40',
+      text: '#FFFFFF',
+      border: 'none',
+      shadow: '0 2px 6px rgba(0,0,0,0.10)',
+      focusRing: '0 0 0 3px rgba(255,122,24,0.25)',
+    },
+    secondary: {
+      bg: '#FFFFFF',
+      hoverBg: '#FFF5EC',
+      text: '#FF7A18',
+      border: '1px solid #FF7A18',
+      shadow: '0 1px 2px rgba(0,0,0,0.04)',
+      focusRing: '0 0 0 3px rgba(255,122,24,0.25)',
+    },
+    tertiary: {
+      bg: 'transparent',
+      hoverBg: 'rgba(255,122,24,0.08)',
+      text: '#FF7A18',
+      border: 'none',
+      shadow: 'none',
+      focusRing: '0 0 0 3px rgba(255,122,24,0.25)',
+    },
+  },
+  cards: {
+    standard: {
+      bg: '#FFFFFF',
+      border: '#D8D8D8',
+      shadow: '0 2px 6px rgba(0,0,0,0.05)',
+    },
+    hoverable: {
+      bg: '#FFFFFF',
+      hoverBg: '#F0F2F5',
+      border: '#D3D3D3',
+      shadow: '0 2px 6px rgba(0,0,0,0.05)',
+    },
+    highlighted: {
+      bg: '#FFFFFF',
+      border: '#FF7A18',
+      glow: 'rgba(255,122,24,0.10)',
+      shadow: '0 0 0 1px #FF7A18',
+    },
+  },
+  inputs: {
+    default: {
+      bg: '#FFFFFF',
+      border: '#D8D8D8',
+      text: '#1D1D1D',
+      placeholder: '#9A9A9A',
+    },
+    focus: {
+      border: '#FF7A18',
+      shadow: '0 0 0 2px rgba(255,122,24,0.25)',
+    },
+    disabled: {
+      bg: '#F0F0F0',
+      border: '#E0E0E0',
+      text: '#A8A8A8',
+      placeholder: '#A8A8A8',
+    },
+  },
+  badges: {
+    default: {
+      bg: '#EFEFEF',
+      text: '#4A4A4A',
+    },
+    primary: {
+      bg: '#FF7A18',
+      text: '#FFFFFF',
+    },
+    secondary: {
+      bg: '#8A63FF',
+      text: '#FFFFFF',
+    },
+  },
+  shadows: {
+    soft: '0 1px 2px rgba(0,0,0,0.04)',
+    medium: '0 2px 6px rgba(0,0,0,0.08)',
+    dialog: '0 4px 12px rgba(0,0,0,0.12)',
+  },
+};
+
+export const themes: Record<ThemeMode, ThemeConfig> = {
+  dark: darkTheme,
+  light: lightTheme,
+};
+

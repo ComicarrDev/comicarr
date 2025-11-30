@@ -1,0 +1,66 @@
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.filter-bar--vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.filter-bar--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.filter-bar__toggle {
+  display: flex;
+  align-items: center;
+}
+
+.filter-bar__search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-bar__search label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color, #333);
+}
+
+.filter-bar__search-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--input-border, var(--color-border));
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background: var(--input-bg, var(--color-bg-main));
+  color: var(--input-text, var(--color-text));
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-bar__search-input:focus {
+  outline: none;
+  border-color: var(--input-focus-border, var(--color-primary));
+  box-shadow: var(--input-focus-shadow, 0 0 0 2px rgba(0, 123, 255, 0.25));
+}
+
+.filter-bar__reset {
+  margin-left: auto;
+}
+
+.filter-bar--vertical .filter-bar__reset,
+.filter-bar--grid .filter-bar__reset {
+  margin-left: 0;
+  margin-top: 0.5rem;
+}
+
+
+

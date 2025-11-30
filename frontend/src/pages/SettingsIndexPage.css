@@ -1,0 +1,46 @@
+.settings-index-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.settings-index-header {
+  margin-bottom: 2rem;
+}
+
+.settings-index-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.settings-index-header p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.settings-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Settings index card specific styles - extends base .card styles from Card.css */
+
+.settings-index-card {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.settings-index-card-icon {
+  /* Extends .card-icon from Card.css */
+}
+
+@media (max-width: 768px) {
+  .settings-index-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

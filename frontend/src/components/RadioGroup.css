@@ -1,0 +1,98 @@
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-group__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.75rem;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: var(--card-bg);
+}
+
+.radio-group__option:hover:not(:has(.radio-group__input:disabled)) {
+  border-color: var(--color-border-active);
+  background: var(--card-hover-bg);
+}
+
+.radio-group__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-group__indicator {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--input-border);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+  background: var(--input-bg);
+}
+
+.radio-group__indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  transition: transform 0.2s ease;
+}
+
+.radio-group__input:checked + .radio-group__indicator {
+  border-color: var(--color-primary);
+  background: var(--input-bg);
+}
+
+.radio-group__input:checked + .radio-group__indicator::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-group__input:disabled + .radio-group__indicator {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.radio-group__input:disabled ~ .radio-group__content {
+  opacity: 0.5;
+}
+
+.radio-group__option:has(.radio-group__input:checked) {
+  border-color: var(--color-primary);
+  background: var(--card-bg);
+  box-shadow: 0 0 0 1px var(--color-primary), 0 0 0 3px var(--glow-primary);
+}
+
+.radio-group__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.radio-group__label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.radio-group__description {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
