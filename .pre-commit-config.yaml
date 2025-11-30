@@ -23,11 +23,18 @@ repos:
         types: [python]
 
     -   id: pyrefly
-        name: Pyrefly (type checking)
+        name: Pyrefly (backend type checking)
         language: system
         entry: bash -c 'uv run pyrefly check backend/comicarr'
         pass_filenames: false
         types: [python]
+
+    -   id: typescript
+        name: TypeScript (frontend type checking)
+        language: system
+        entry: bash -c 'cd frontend && npx tsc --noEmit'
+        pass_filenames: false
+        files: ^frontend/
 
 # Note: pytest is disabled in pre-commit due to:
 # - pytest: Requires full project dependencies, better run via `make test-back`
