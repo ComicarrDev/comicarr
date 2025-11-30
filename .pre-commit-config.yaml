@@ -4,28 +4,28 @@ repos:
     -   id: black
         name: black
         language: system
-        entry: uv run black
+        entry: uv run --extra dev black
         files: ^backend/
         types: [python]
 
     -   id: isort
         name: isort
         language: system
-        entry: uv run isort
+        entry: uv run --extra dev isort
         files: ^backend/
         types: [python]
 
     -   id: ruff
         name: ruff
         language: system
-        entry: uv run ruff check --fix
+        entry: uv run --extra dev ruff check --fix
         files: ^backend/
         types: [python]
 
     -   id: pyrefly
         name: Pyrefly (backend type checking)
         language: system
-        entry: bash -c 'uv run pyrefly check backend/comicarr'
+        entry: bash -c 'uv run --extra dev pyrefly check backend/comicarr'
         pass_filenames: false
         types: [python]
 
