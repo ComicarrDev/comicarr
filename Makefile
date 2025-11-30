@@ -2,11 +2,50 @@ SHELL := /bin/bash
 
 ENV_FILE := $(wildcard .env)
 
-.PHONY: help dev dev-back dev-front run test test-back test-front build-front build clean sync install cov-back cov-front type-check type-check-back type-check-front
+.PHONY: help dev dev-back dev-front run test test-back test-front build-front build clean sync install cov-back cov-front type-check type-check-back type-check-front docker-build docker-run docker-stop docker-logs docker-restart
 
 help: ## Show this help message
-	@echo "Available targets:"
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-15s %s\n", $$1, $$2}'
+	@echo "Comicarr - Makefile Commands"
+	@echo ""
+	@echo "Getting Started:"
+	@echo "  sync              Sync dependencies (backend and frontend, including test and dev)"
+	@echo "  install           Install dependencies (alias for sync)"
+	@echo ""
+	@echo "Development:"
+	@echo "  dev-back          Start backend in development mode"
+	@echo "  dev-front         Start frontend development server (with hot reload)"
+	@echo ""
+	@echo "Testing:"
+	@echo "  test-back         Run backend test suite with coverage"
+	@echo "  test-front        Run frontend test suite (non-watch mode)"
+	@echo "  test              Run all tests (backend and frontend)"
+	@echo "  cov-back          Run backend tests with coverage (generates HTML report)"
+	@echo "  cov-front         Run frontend test suite with coverage"
+	@echo "  coverage          Run all tests with coverage (backend and frontend)"
+	@echo ""
+	@echo "Type Checking:"
+	@echo "  type-check-back   Run backend type checking with pyrefly"
+	@echo "  type-check-front  Run frontend type checking with TypeScript"
+	@echo "  type-check        Run type checking (backend and frontend)"
+	@echo ""
+	@echo "Building:"
+	@echo "  build-front       Build frontend assets for production"
+	@echo "  build             Build all assets"
+	@echo ""
+	@echo "Running:"
+	@echo "  run               Start backend in production mode"
+	@echo ""
+	@echo "Docker:"
+	@echo "  docker-build      Build Docker image"
+	@echo "  docker-run        Run Docker container (detached mode)"
+	@echo "  docker-stop       Stop Docker container"
+	@echo "  docker-restart    Restart Docker container"
+	@echo "  docker-logs       View Docker container logs (follow mode)"
+	@echo ""
+	@echo "Maintenance:"
+	@echo "  clean             Clean build artifacts and caches"
+	@echo ""
+	@echo "For more information, see README.md"
 
 define load_env
 set -a; \
@@ -86,3 +125,23 @@ run: ## Start backend in production mode
 	@echo "Starting backend in production mode..."
 	@$(load_env) \
 	COMICARR_ENV=production uv run python -m comicarr.app
+
+docker-build: ## Build Docker image
+	@echo "Building Docker image..."
+	docker-compose build
+
+docker-run: ## Run Docker container with local dev data
+	@echo "Running Docker container..."
+	docker-compose up -d
+	@echo "Container started. Access at http://localhost:8000"
+
+docker-stop: ## Stop Docker container
+	@echo "Stopping Docker container..."
+	docker-compose down
+
+docker-restart: docker-stop docker-run ## Restart Docker container
+
+docker-logs: ## View Docker container logs
+	@echo "Viewing Docker container logs..."
+	docker-compose logs -f
+
