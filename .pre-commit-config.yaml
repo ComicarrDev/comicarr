@@ -1,0 +1,33 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: black
+        name: black
+        language: system
+        entry: uv run black
+        files: ^backend/
+        types: [python]
+
+    -   id: isort
+        name: isort
+        language: system
+        entry: uv run isort
+        files: ^backend/
+        types: [python]
+
+    -   id: ruff
+        name: ruff
+        language: system
+        entry: uv run ruff check --fix
+        files: ^backend/
+        types: [python]
+
+    -   id: pyrefly
+        name: Pyrefly (type checking)
+        language: system
+        entry: bash -c 'uv run pyrefly check backend/comicarr'
+        pass_filenames: false
+        types: [python]
+
+# Note: pytest is disabled in pre-commit due to:
+# - pytest: Requires full project dependencies, better run via `make test-back`

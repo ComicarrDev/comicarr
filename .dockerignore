@@ -1,0 +1,96 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+tests/
+
+# Environment
+.env
+.env.local
+
+# Database (development databases, not production data)
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend development files (but keep built assets)
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/coverage/
+# Note: backend/comicarr/static/frontend/* should be INCLUDED in image (built assets)
+
+# Temporary files
+tmp/
+*.tmp
+
+# Git files (not needed in Docker image)
+.git/
+.gitignore
+.github/
+
+# Docker files (not needed in Docker image)
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Documentation (not needed in production image)
+*.md
+LICENSE
+docs/
+
+# Project management files
+project_management/
+requirements-dev.txt
