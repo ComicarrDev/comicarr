@@ -52,10 +52,18 @@ dmypy.json
 *.db
 *.sqlite
 *.sqlite3
+*.db-shm
+*.db-wal
+data/database/
 
 # Logs
 *.log
 logs/
+data/logs/
+
+# Cache
+data/cache/
+*.cache
 
 # OS
 .DS_Store
